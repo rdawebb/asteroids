@@ -7,3 +7,4 @@ ASTEROID_SPAWN_RATE = 0.8  # seconds
 ASTEROID_MAX_RADIUS = ASTEROID_MIN_RADIUS * ASTEROID_KINDS
 PLAYER_RADIUS = 20 # hit box radius
 PLAYER_TURN_SPEED = 300  # turn speed in degrees per second
+PLAYER_SPEED = 200  # movement speed in pixels per second

@@ -16,11 +16,20 @@ class Player(CircleShape):
 
     def update(self, dt):
         keys = pygame.key.get_pressed() # get the state of all keyboard buttons
-
+        
+        # key controls
         if keys[pygame.K_a]: # if a is pressed
-            self.rotate(-dt) # rotate left
-        if keys[pygame.K_d]: # if d is pressed
-            self.rotate(dt) # rotate right
+            self.rotate(-dt)  # rotate left
+        if keys[pygame.K_d]:  # if d is pressed
+            self.rotate(dt)  # rotate right
+        if keys[pygame.K_w]:  # if w is pressed
+            self.move(dt)  # move forward
+        if keys[pygame.K_s]:  # if s is pressed
+            self.move(-dt)  # move backward
+
+    def move(self, dt):
+        forward = pygame.Vector2(0, 1).rotate(self.rotation) # get the forward direction
+        self.position += forward * PLAYER_SPEED * dt # update player position
 
     # in the player class
     def triangle(self):
